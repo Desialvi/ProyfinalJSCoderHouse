@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+    <div id="cabecera">
+        <h1>Bienvenidos al Sitio Web de Seguros Médicos</h1>
+        <p>En este sitio Web Ud puede cotizar su seguro médico, costos y beneficios. 
+            Asesoramos Personas y Empresas
+        </p>
+    </div>
+    
+</header>  
+    
+<ul id="menu">
+        <li class="lista-li">Sobre nosotros</li>
+        <li class="lista-li">Inicio</li>
+        <li class="lista-li">Servicios</li>
+        <li class="lista-li">Contactos</li>
+</ul>
+
+<ul id="datos">
+    <form class="form" id="form">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" placeholder="Ingrese su nombre..." id="nombre">
+        
+        <br>
+
+
+    <label for="apellido">Apellido</label>
+    <input  type="text" name="apellido"  placeholder="Ingrese su apellido..." id="apellido">
+
+    <br>
+
+    <label for="dni">DNI</label>
+    <input type="text" name="dni" id="dni">
+
+    <br>
+
+    <label for="enfermedad">Ha tenido enfermedades u operaciones complejas?</label>
+    <input type="checkbox" name="enfermedad" id="enfermedad">
+
+    <br>
+
+    <label for="nacimiento" >Ingrese su año de nacimiento</label>
+    <input type="number" name="nacimiento" id="nacimiento">
+
+    <br>
+
+    <label for="altura">Ingrese su altura en m</label>
+    <input type="text" name="altura" id="altura">
+
+    <br>
+
+    <label for="peso">Ingrese su peso</label>
+    <input type="number" name="peso" id="peso">
+
+    <br>
+
+    <div id="containerselect"></div>
+<br>
+    <button type="button" id="btnenviar">Enviar</button>
+</form>
+    <!-- <input type="button" value="enviar"> -->
+    
+</ul>
+<button type="button" class="btn btn-danger" id="btnlimpiar">Borrar Datos</button>
+<div id="container"></div>
+
+<p class="parrafo"> Seleccionar una obra social de su preferencia
+</p>
+
+
+<div id="obrasocial"></div>
+
+
+
+ <script src="app.js"></script> 
+ <script src="jquery-3.6.0.min.js"></script>  
+</body>
+</html>
