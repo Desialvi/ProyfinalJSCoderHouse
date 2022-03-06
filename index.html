@@ -5,89 +5,87 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
     <title>Document</title>
   </head>
   <body>
-    <header>
-      <div id="cabecera">
-        <h1>Bienvenidos al Sitio Web de Seguros Médicos</h1>
-        <p>
-          En este sitio Web Ud puede cotizar su seguro médico, costos y
-          beneficios. Asesoramos Personas y Empresas
-        </p>
-      </div>
+    <header class="header">
+      <h2>Seguros Médicos</h2>
+      <nav class="nav">
+        <a href="#" class="link">Inicio</a>
+        <a href="#" class="link">Servicios</a>
+        <a href="#" class="link">Contactos</a>
+        <a href="#" class="link">Sobre nosotros</a>
+      </nav>
     </header>
 
-    <ul id="menu">
-      <li class="lista-li">Sobre nosotros</li>
-      <li class="lista-li">Inicio</li>
-      <li class="lista-li">Servicios</li>
-      <li class="lista-li">Contactos</li>
-    </ul>
-
+    <h3>Bienvenidos al Sitio Web de Seguros Médicos</h3>
+    <p>
+      En este sitio Web Ud puede cotizar su seguro médico, costos y beneficios.
+      Asesoramos Personas y Empresas
+    </p>
     <ul id="datos">
-      <form class="form" id="form">
-        <label for="nombre">Nombre</label>
-        <input
-          type="text"
-          name="nombre"
-          placeholder="Ingrese su nombre..."
-          id="nombre"
-        />
+      <fieldset class="fieldset">
+        <form class="form" id="form">
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            name="nombre"
+            placeholder="Ingrese su nombre..."
+            id="nombre"
+          />
 
-        <br />
+          <br />
 
-        <label for="apellido">Apellido</label>
-        <input
-          type="text"
-          name="apellido"
-          placeholder="Ingrese su apellido..."
-          id="apellido"
-        />
+          <label for="apellido">Apellido</label>
+          <input
+            type="text"
+            name="apellido"
+            placeholder="Ingrese su apellido..."
+            id="apellido"
+          />
 
-        <br />
+          <br />
 
-        <label for="dni">DNI</label>
-        <input type="text" name="dni" id="dni" />
+          <label for="dni">DNI</label>
+          <input type="text" name="dni" id="dni" />
 
-        <br />
+          <br />
 
-        <label for="enfermedad"
-          >Ha tenido enfermedades u operaciones complejas?</label
-        >
-        <input type="checkbox" name="enfermedad" id="enfermedad" />
+          <label for="enfermedad"
+            >Ha tenido enfermedades u operaciones complejas?</label
+          >
+          <input type="checkbox" name="enfermedad" id="enfermedad" />
 
-        <br />
+          <br />
 
-        <label for="nacimiento">Ingrese su año de nacimiento</label>
-        <input type="number" name="nacimiento" id="nacimiento" />
+          <label for="nacimiento">Ingrese su año de nacimiento</label>
+          <input type="number" name="nacimiento" id="nacimiento" />
 
-        <br />
+          <br />
 
-        <label for="altura">Ingrese su altura en m</label>
-        <input type="text" name="altura" id="altura" />
+          <label for="altura">Ingrese su altura en m</label>
+          <input type="text" name="altura" id="altura" />
 
-        <br />
+          <br />
 
-        <label for="peso">Ingrese su peso</label>
-        <input type="number" name="peso" id="peso" />
+          <label for="peso">Ingrese su peso</label>
+          <input type="number" name="peso" id="peso" />
 
-        <br />
+          <br />
 
-        <div id="containerselect"></div>
-        <br />
-        <button type="button" id="btnenviar">Enviar</button>
-      </form>
-      <!-- <input type="button" value="enviar"> -->
+          <div id="containerselect"></div>
+          <br />
+          <button type="button" id="btnenviar">Enviar</button>
+        </form>
+        <div id="obrasocial-container" style="display: none"></div>
+        <!-- <input type="button" value="enviar"> -->
+      </fieldset>
     </ul>
     <button type="button" class="btn btn-danger" id="btnlimpiar">
       Borrar Datos
     </button>
     <div id="container"></div>
-
-    <div id="obrasocial" style="display: none">
-      <p class="parrafo">Seleccionar una obra social de su preferencia</p>
-    </div>
 
     <script src="app.js"></script>
     <script src="jquery-3.6.0.min.js"></script>

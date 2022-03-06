@@ -98,7 +98,8 @@ function showDatos() {
                                   </div>`;
 
       container.appendChild(contenedor);
-      $("#obrasocial").css("display", "block");
+      MostrarEtiquetaObraSocial();
+      $("#obrasocial-container").css("display", "block");
 
       form.reset();
     } else {
@@ -128,7 +129,7 @@ const array_obrasocial = [];
 
 class prepaga {
   constructor(Nombre, precio) {
-    this.id = obrasocial.length;
+    this.id = array_obrasocial.length;
     this.Nombre = Nombre.toUpperCase();
     this.precio = Number(precio);
   }
@@ -148,7 +149,7 @@ console.log(array_obrasocial);
 //funcion para generar el select de los obrasocial
 
 function obrasocialSelect(id) {
-  let innerSelect = "";
+  let innerSelect = `<option value="seleccionar">seleccionar</option>`;
   array_obrasocial.forEach(
     (OSocial) =>
       (innerSelect += `<option value=${OSocial.Nombre}>${OSocial.Nombre}</option>`)
@@ -157,35 +158,44 @@ function obrasocialSelect(id) {
 }
 
 //agregar al dom
-
-$("#obrasocial").append(obrasocialSelect("elegirObraSocial"));
-$("#elegirObraSocial").change((e) => {
-  const seleccion = array_obrasocial.find(
-    (obraso) => obraso.id == e.target.value
+function MostrarEtiquetaObraSocial() {
+  $("#obrasocial-container").append(
+    `<p class="parrafo">Seleccionar una obra social de su preferencia</p>`
   );
-  console.log(seleccion);
-  $("#obrasocial").append(`<div id="ObraSocialSeleccionada">
+  $("#obrasocial-container").append(obrasocialSelect("elegirObraSocial"));
+  $("#elegirObraSocial").change((e) => {
+    const seleccion = array_obrasocial.find(
+      (obraso) => obraso.Nombre == e.target.value
+    );
+    if (seleccion == undefined) {
+      $("#ObraSocialSeleccionada").remove();
+      return;
+    }
+    $("#obrasocial-container").append(`<div id="ObraSocialSeleccionada">
     <h4>Ud a seleccionado la obra social ${seleccion.Nombre} cuyo valor es de ${seleccion.precio}</h4>
     <button type="button" id="confirmar">Confirmar</button>
     <button type="button" id="cancelar">X</button>
     </div>`);
-  //eventos botones
-  let seleccionObraSocial = document.getElementById("ObraSocialSeleccionada");
-  let btnConfirmar = document.getElementById("confirmar");
-  let btnCancelar = document.getElementById("cancelar");
+    //eventos botones
+    let obrasocial_container = document.getElementById("obrasocial-container");
+    let btnConfirmar = document.getElementById("confirmar");
+    let btnCancelar = document.getElementById("cancelar");
 
-  //evento que escucha
-  btnConfirmar.addEventListener("click", () => {
-    alert(`A registrado su obra social correctamente`);
-    // persona.obraSocial = array_obrasocial.find(
-    //   (OS) => OS.Nombre === seleccion.Nombre
-    // );
-    seleccionObraSocial.innerHTML = "";
+    //evento que escucha
+    btnConfirmar.addEventListener("click", () => {
+      alert(`A registrado su obra social correctamente`);
+      Personas[Personas.length - 1].obraSocial = array_obrasocial.find(
+        (OS) => OS.Nombre === seleccion.Nombre
+      );
+      container.innerHTML = "";
+      obrasocial_container.innerHTML = "";
+      $("#obrasocial-container").css("display", "none");
+    });
+    btnCancelar.addEventListener("click", () => {
+      $("#ObraSocialSeleccionada").remove();
+    });
   });
-  btnCancelar.addEventListener("click", () => {
-    seleccionObraSocial.innerHTML = "";
-  });
-});
+}
 
 // AJAX
 

@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  background-color: black;
+  padding-left: 1rem;
+}
+
+.nav {
+  justify-content: center;
+  align-items: center;
+}
+
+.link {
+  padding: 0.5rem;
+  text-decoration: none;
+  color: white;
+}
+
+.fieldset {
+  background-image: url("https://us.123rf.com/450wm/belchonock/belchonock2002/belchonock200207272/140028379-interior-del-consultorio-m%C3%A9dico-con-lugar-de-trabajo-moderno-en-la-cl%C3%ADnica.jpg?ver=6");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
